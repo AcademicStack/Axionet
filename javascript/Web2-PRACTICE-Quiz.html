@@ -12,6 +12,7 @@
 		console.log("PROBLEM 1"); 
 		// console log your name below this comment
 
+		console.log("Jon")
 
 		// You'll use this array to solve the following problems
 		const users = [
@@ -26,8 +27,12 @@
 		// Use the forEach() method to loop through each element
 		// in the users array, and console log the first and last name 
 		// each 'user' object
-
-
+		let names = users.forEach(user => {
+			console.log(user.firstName, user.lastName);
+		});
+			
+		
+		
 
 
 		console.log("PROBLEM 3") 
@@ -35,7 +40,8 @@
 		// to get the users who have a role of 'Standard User'
 		// Then console log the value returned by calling the filter() method
 		
-
+		let role = users.filter((user) => {return user.role == "Standard User"});
+		console.log(role);
 
 
 
@@ -57,8 +63,8 @@
 		Then console log the rows variable
 		*/
 
-
-
+		let rows = users.map((ce) => {return "<tr>"+"<td>"+ce.firstName+"</td>"+"<td>"+ce.lastName+"</td>"+"</tr>"});
+		console.log(rows);
 
 
 		console.log("PROBLEM 5"); 
@@ -66,7 +72,8 @@
 		// and then set it's innerHTML property by joining
 		// the elements from the 'rows' array that you created in the previous problem.
 
-
+		let table = document.querySelector("#users-table");
+		table.innerHTML = rows.join();
 
 
 	});
