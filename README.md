@@ -1,0 +1,2 @@
+# Axionet
+Axionet is an experimental codebase exploring science, systems, and computation. It serves as a sandbox for academic exercises and technical experiments, guided by curiosity and a luminous, cyber-scientific vision of the future.
