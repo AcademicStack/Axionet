@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Target vs CurrentTarget</title>
+  <style>
+    div {
+      border: 2px solid black;
+      padding: 20px;
+      margin: 10px;
+    }
+ 
+ 
+    #divA {
+      background-color: lightcoral;
+    }
+    #divB {
+      background-color: lightblue;
+    }
+    #divC {
+      background-color: lightgreen;
+    }
+  </style>
+  <script>
+ 
+    window.addEventListener("load", () => {
+ 
+      // TODO: 
+      // 1. Add an event handler to divA and listen for 'click' events  
+      // 2. In the body of the event handler function, console log the target property of the parameter
+      // 3. Then log the currentTarget property of the parameter
+      
+        const divA = document.querySelector("#divA");
+        divA.addEventListener("click", (evt) => {
+            console.log(evt.target);
+            console.log(evt.currentTarget);
+        })
+
+    });
+ 
+  </script>
+</head>
+<body>
+  <div id="divA">
+    Div A
+    <div id="divB">
+      Div B
+      <div id="divC">
+        Div C
+        <br>
+        <button id="btn">This is a button</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

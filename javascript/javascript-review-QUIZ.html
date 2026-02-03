@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Embedded Code Editor</title>
+    <style type="text/css" media="screen">
+        html{
+            margin-bottom:40px;
+        }
+        
+        body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            height: 100vh;
+        }
+
+        #container {
+            width: 700px;
+            height: 500px;
+            margin: 20px auto;
+        }
+        #editor { 
+            /* position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0; */
+            position: relative;
+            width:700px;
+            height:400px;
+            border: 1px solid #ccc;
+        }
+
+        #control-bar {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #results {
+            margin-top: 20px;
+            width: 700px;
+            display: none;
+        }
+
+        p{
+            color: blue;
+            font-weight: bold;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap; /* Allow line breaks */
+            word-wrap: break-word; /* Break long words */
+        }
+
+        span#copy{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+  <h1>Coding Quiz - JavaScript Review</h1>
+  <div id="editor">
+    
+// Problem 1: Write a function that takes two numbers 
+// as arguments and returns their sum.
+
+    let num = [5, 7];
+    let sum = 0;
+    let add = () => {
+        sum = num[0] + num[1];
+        };
+    add();
+    console.log(sum);
+
+//Problem 2: 
+// Prompt the user to enter their favorite food.
+// Then write an IF statement that does the following:
+// If the user enters "pizza", then log "We have pizza!" to the console.
+// If the user enters "ice cream", then log "We have ice cream!" to the console.
+// If the user enters anything else, log "Sorry, we don't have that." to the console.
+
+        prompt("What is your favorite food");
+        if (prompt = "pizza"){
+            console.log("We have pizza!");
+        }else if(prompt = "ice cream");{
+            console.log("We have ice cream!");
+        }else{
+            console.log("Sorry, we don't have that.")
+        };
+
+
+
+//Problem 3: Loop through the array below and log the current element:
+var fruits = ["apple", "banana", "cherry", "date", "elderberry"];
+
+  </div>
+  <div id="control-bar">
+    <div>
+        <label>Select Theme:</label>
+        <select id="theme">
+            <option value="ace/theme/monokai">Monokai</option>
+            <option value="ace/theme/github">GitHub</option>
+            <option value="ace/theme/twilight">Twilight</option>
+            <option value="ace/theme/solarized_light">Solarized Light</option>
+            <option value="ace/theme/solarized_dark">Solarized Dark</option>
+        </select>
+    </div>
+    <button id="btnSubmit">Submit</button>
+  </div>
+  <div id="results">
+    <p>
+        Copy everything in the gray box below and paste it into a ChatGPT prompt to
+        see how well you did (<span id="copy">or click here to copy everything to your clipboard</span>).
+    </p>
+    <pre id="prompt"></pre>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+    
+    document.getElementById('theme').addEventListener('change', function(){
+        editor.setTheme(this.value);
+    });
+
+    document.getElementById('btnSubmit').addEventListener('click', function(){
+
+        if(!confirm("Are you sure you want to submit your code for evaluation?")){
+            return;
+        }
+
+        var code = editor.getValue();
+
+        const prompt = `
+Below is a JavaScript coding exercise along with a user's solution. Please evaluate the solution for correctness and completeness:
+`
+        document.getElementById('results').style.display = 'block';
+        document.getElementById('results').querySelector('pre').textContent = prompt + code;
+    }); 
+
+    document.getElementById('copy').addEventListener('click', function(){
+        var promptText = document.getElementById('prompt').textContent;
+        navigator.clipboard.writeText(promptText).then(function() {
+            alert('Prompt copied to clipboard!');
+        }, function(err) {
+            alert('Could not copy text: ', err);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern JavaScript</title>
+    <script>
+        window.addEventListener("load", () => {
+
+            const someFunction = () => {
+
+            }
+
+            const scores = [92, 100, 95];
+            for(let x = 0; x < scores.length; x++){
+                console.log(scores[x]);
+            }
+
+            scores.forEach((ce) => {
+                console.log(ce)
+            })
+
+            // querySelector and querySelectorAll
+
+            //const h2 = document.getElementById("jacob");
+            //h2.innerHTML = "foo";
+
+            const h2 = document.querySelector("#jacob");
+            console.log(h2)
+
+            const fruitList = document.querySelector(".fruits");
+            console.log(fruitList);
+
+            const listItems = document.querySelectorAll("li");
+            console.log(listItems);
+
+            listItems.forEach((li, idx) => {
+                console.log(li);
+                li.innerHTML = "foo" + idx;
+            })
+
+            // ternary operator (AKA conditional operator)
+            let pass;
+            const score = 10;
+
+            pass = score > 70 ? "You passed!!!!!" : "You failed!";
+
+            //alert(score > 70 ? "You passed!!!!!" : "You failed!");
+
+            // Ways to abbriviate arrow functions
+
+            const someArray = ["cat", "dog", "carrot"];
+            someArray.forEach((currentElement, index) => {console.log(currentElement)});
+            //if the arrow function has one and only only one parameter.
+            //you can revove the () around the parameter
+            someArray.forEach(currentElement => {console.log(currentElement)});
+            // if the arrow function has one only one statement in its body
+            // you can remove the curly braces
+            someArray.forEach(currentElement => console.log(currentElement));
+         
+
+            // method chaining
+
+            document.querySelector("#jacob").addEventListener("click", () => {
+                alert("Thank You!");
+            });
+
+            const testScores = [97, 94, 65];
+            const passingScores = testScores.filter((score) => {return score >= 70});
+            console.log(passingScores);
+            const sum = passingScores.reduce((sum, ce) => {return ce + sum}, 0);
+            console.log(sum);
+
+            console.log(testScores.filter((score) => {return score >= 70}).reduce((sum, ce) => {return ce + sum}, 0));
+            console.log(testScores.filter(score => score >= 70).reduce((sum, ce) => ce + sum, 0));
+
+            // template syntax
+            let str = "asdaewogwogh";
+            str += "japheljewls";
+            str += "aoieshjoewlhfo";
+
+
+            const name = "Jon"
+
+            str =  `a;sjdfsjf
+                    las ${name}    jdlfjslf
+                    alsdflks`
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <h2 id="jacob">rdxtfyvghb</h2>
+    <ul class="fruits">
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Oranges</li>
+    </ul>
+</body>
+</html>

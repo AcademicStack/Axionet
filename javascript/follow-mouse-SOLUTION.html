@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Follow Mouse</title>
+	<style type="text/css">
+		#circleDiv{
+			position: absolute;
+			height: 50px;;
+			width:  50px;
+			top: 0px;
+			right:  0px;
+			border-radius: 25px;
+			background-color: rgba(127, 127, 127, 0.4);
+		}
+	</style>
+	<script type="text/javascript">
+	window.addEventListener("load", () => {
+
+
+
+		const circleDiv = document.getElementById("circleDiv");
+		
+		/*
+		// Make the circle follow the mouse
+		window.addEventListener("mousemove", evt => {
+			
+			//console.log(evt.pageX, evt.pageY);
+			
+			// The easy way...
+			//circleDiv.style.left = evt.pageX + "px";
+			//circleDiv.style.top = evt.pageY + "px";
+
+			// To center the circle under the cursor
+			//circleDiv.style.left = evt.pageX - 25 + "px";
+			//circleDiv.style.top = evt.pageY - 25 + "px";
+
+			// or even better
+			const width = parseInt(window.getComputedStyle(circleDiv).width)
+			const height = parseInt(window.getComputedStyle(circleDiv).height)
+			circleDiv.style.left = (evt.pageX - width/2) + "px";
+			circleDiv.style.top = (evt.pageY - height/2) + "px";
+
+
+		});
+		*/
+
+		
+
+		// Make it so that you have to click on the circle to activate or deactivate
+		// it from following the mouse
+		let following = false;
+
+		circleDiv.addEventListener("click", () => {
+			following = !following;
+			if(following){
+				window.addEventListener("mousemove", followMouse);
+			}else{
+				window.removeEventListener("mousemove", followMouse);
+			}
+		});
+
+		const followMouse = (evt) => {
+			const style = window.getComputedStyle(circleDiv);
+			//console.log(style.width); // notice it includes the "px" so we need to parse to int
+			const width = parseInt(style.width);
+			const height = parseInt(style.height);
+			circleDiv.style.left = evt.pageX - 25 + "px";
+			circleDiv.style.top = evt.pageY - 25 + "px";
+		}
+
+		
+		
+	})
+	</script>
+</head>
+<body>
+	<div id="circleDiv"></div>
+</body>
+</html>

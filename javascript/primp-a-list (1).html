@@ -1,0 +1,152 @@
+<html>
+	<head>
+		<title>Primp a List!</title>
+		<style type="text/css">
+      body{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .instructions li{
+        padding: 4px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+			div.answer{
+				padding: 20px;
+				background-color: lightgray;
+			}
+			
+			.book-list{
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.book-list li{
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+}
+
+.book-list li:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-list h3{
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.book-list h4{
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.book-list p{
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.book-list a{
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.book-list a:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+		</style>
+	</head>
+	<body>
+		<h1>AI Assisted CSS Styling</h1>
+    <h2>Instructions</h2>
+		<ol class="instructions">
+			<li>
+				First, look at the CSS selectors in the &lt;style&gt; tag of this page, 
+				and make sure you understand each of them.
+			</li>
+			<li>
+				Use AI to style the book list below.
+			</li>
+			<li>
+				Have the AI generate at least 3 different versions of the styled book list: 
+        <ul>
+          <li>
+            Make sure to include the HTML code for the book list in your prompt, 
+			so that the AI can understand how the content is structured.
+          </li>
+          <li>
+            To get different versions of the list, alter the prompt you enter 
+			(for example you might tell the AI to make one version "fancy", 
+			another version "minimalist", and another version "colorful").
+          </li>
+          <li>You may want to tell the AI to keep the CSS somewhat simple so you can understand it.</li>
+          <li>Make sure to review the CSS code that AI generates, to help you learn CSS.</li>
+          <li>You should ask the AI questions about the CSS it generates (you could tell it that you're a student in a Web Programming class).</li>
+          <li>Make sure to create at least one version that uses 'cards'</li>
+        </ul>
+			</li>
+			<li>
+				After experimenting with AI:
+				<ol>
+					<li>
+            Choose one version of the AI generated lists and apply the CSS to the book list on this page, but make sure that your CSS only affects the book list and not other elements on the page.
+          </li>
+					<li>Answer the question under the list.</li>
+				</ol>
+			</li>
+		</ol>
+		<h2>Books</h2>
+		<ul class="book-list">
+			<li>
+				<h3>Harry Potter</h3>
+				<h4>Author: JK Rowlings</h4>
+				<p>This book is about a young wizard, and his young wizard friends.</p>
+				<a href="#">View details...</a>
+			</li>
+			<li>
+				<h3>On the Road</h3>
+				<h4>Author: Jack Keruac</h4>
+				<p>This book is about a young person who goes on the road and has many wild adventures.</p>
+				<a href="#">View details...</a>
+			</li>
+			<li>
+				<h3>For Whom the Bells Toll</h3>
+				<h4>Author: Jack Ernest Hemmingway</h4>
+				<p>This book has the saddest ending imaginable. It made me cry!</p>
+				<a href="#">View details...</a>
+			</li>
+		</ul>
+		<h2>Question</h2>
+		<p>What are 3 things you learned about CSS from doing this activity? Replace the content in the LI elements below with your answer.</p>
+		<div class="answer">
+			<ol>
+        <li>AI is fairly good at this.</li>
+        <li>Its substantially faster to have AI perform negligble tasks. Especally since I'm not an artist of 
+			graphic disigner.
+		</li>
+        <li>The prompts are extremely important.</li>
+      </ol>
+		</div>		
+	</body>
+</html>

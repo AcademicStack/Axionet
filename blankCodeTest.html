@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+       
+        const n = Math.floor(Math.random() * 3) + 1;
+        console.log(n);
+        
+        let iceCream = "";
+        console.log(iceCream);
+
+        if (n == 1){
+            iceCream = "vanilla";
+        }else if(n == 2){
+            iceCream = "chocolate";
+        }else if (n == 3){
+            iceCream = "strawberry";
+        };
+
+        switch (iceCream) {
+            case "vanilla":
+                console.log("Yummy");
+                break;
+
+            case "chocolate":
+                console.log("Hmmm. Well, nibble at it.");
+                break;
+
+            case "strawberry":
+                console.log("Ultra violence shall ensue!");
+                break;
+        };
+
+
+        const dessert = {
+            kind: "vanilla",
+            brand: "kemps",
+            flavor: "Yummey"
+        };
+
+        for (let key in dessert) {
+            console.log(key + ": " + dessert[key]);
+        };
+
+        let num = [5, 7];
+            let sum = 0;
+            let add = () => {
+                sum = num[0] + num[1];
+                };
+            add();
+            console.log(sum);
+
+    
+      let food = prompt("What is your favorite food?");
+        if (food == "pizza"){
+            console.log("We have pizza!");
+        }else if(food == "ice cream"){
+            console.log("We have ice cream!");
+        }else{
+            console.log("Sorry, we don't have that.");
+        };
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
