@@ -12,8 +12,16 @@
 		  {id: 33, firstName:"Barney", lastName:"Smith", email:"barney@smith.com"}
 		];
 
-	    // We'll put our JavaScript code here
-		
+	    console.dir(localStorage);
+		localStorage.setItem("firstName", "Jon");
+
+		localStorage.setItem("users", JSON.stringify(users));
+
+		const userStr = localStorage.getItem("users");
+		const allUsers = JSON.parse(userStr);
+
+		localStorage.clear();
+
 	  });
 	</script>
 </head>

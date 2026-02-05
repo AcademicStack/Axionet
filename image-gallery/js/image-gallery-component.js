@@ -17,5 +17,65 @@
  */
 
 const createGallery = (el, images) => {
-	// TODO: Put your code here
+	const template = `<img class="mainImg" src="">
+					  <h3 class="caption"></h3>
+					  <input type="button" class="btnPre" value="Prev">
+					  <input type="button" class="btnNext" value="Next">`
+console.log(images);
+	el.innerHTML = template;
+	el.classList.add("image-gallery");
+
+	const mainImg = el.querySelector(".mainImg");
+	const caption = el.querySelector(".caption");
+	const btnPre  = el.querySelector(".btnPre");
+	const btnNext = el.querySelector(".btnNext");
+
+
+
+
+	let currentImg = 0;
+
+	// STEP 2
+	// Create a function to display an image object
+	const showImage = (imgObj) => {
+		mainImg.src = imgObj.path;
+		mainImg.alt = imgObj.description;
+		caption.innerHTML = imgObj.description;
+	}
+
+	showImage(images[currentImg]);
+
+	// STEP 3
+	// add an event handler function to the 'next' button
+	btnNext.addEventListener("click", () => {
+		currentImg++;
+		if(currentImg == images.length){
+		currentImg = 0;
+		}
+		showImage(images[currentImg]);
+	})
+
+	// STEP 4
+	// add an event handler function to the 'prev' button
+	btnPre.addEventListener("click", ()=>{
+		currentImg--;
+		if(currentImg < 0){
+		currentImg = images.length - 1;
+		}
+		showImage(images[currentImg]);
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -22,13 +22,17 @@
 
 
     const landscapeImages = [
-      {path: "../images/Desert.jpg", description:"A hot desert.", artist:"Bob Smith", "date": "3/31/2018", tags:["dessert", "landscape"]},
-      {path: "../images/Lighthouse.jpg", description:"A lighthouse on the ocean", artist:"Betty Carter", "date": "2/01/2014", tags:["oceian", "landscape"]},
-      {path: "../images/Tulips.jpg", description:"Some beautiful tulips", artist:"Bob Smith", "date": "2/14/2015", tags:["plants", "tulips", "landscape"]}
+      {path: "images/Desert.jpg", description:"A hot desert.", artist:"Bob Smith", "date": "3/31/2018", tags:["dessert", "landscape"]},
+      {path: "images/Lighthouse.jpg", description:"A lighthouse on the ocean", artist:"Betty Carter", "date": "2/01/2014", tags:["oceian", "landscape"]},
+      {path: "images/Tulips.jpg", description:"Some beautiful tulips", artist:"Bob Smith", "date": "2/14/2015", tags:["plants", "tulips", "landscape"]}
     ];
 
 
-  
+  createGallery(document.getElementById("image-gallery"), animalImages);
+  createGallery(document.getElementById("foo"), landscapeImages);
+
+
+
   });
   </script>
 
@@ -37,5 +41,6 @@
 	<h1>Image Gallery Component</h1>
   <div id="image-gallery"></div>
   <p>Images provided by Microsoft (Windows 7).</p>
+  <div id="foo"></div>
 </body>
 </html>
