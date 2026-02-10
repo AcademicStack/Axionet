@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Confetti</title>
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+		 <script>
+		 	window.addEventListener("load", ()=>{
+		 		confetti();
+
+                document.querySelector("#btn").addEventListener("click", ()=>{
+                    confetti({
+                        particleCount: 500,
+                        spread: 80,
+                        origin: {
+                            x: .8,
+                            y: .2
+                        },
+                        drift: -2
+                    });
+                });
+		 	});
+		 </script>
+	</head>
+	<body>
+        <input type="button" id="btn" value="click me">
+	</body>
+</html>
