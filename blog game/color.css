@@ -1,0 +1,19 @@
+*{
+    background-color: black;
+}
+
+body{
+    margin: 0;
+}
+
+#hero{
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    background-image: url("assets/AnimationSheet.png");
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    transform: scale(3.5);
+    transform-origin: top left;
+    
+}   
